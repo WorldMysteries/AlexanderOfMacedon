@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тайна Гробницы Александра Великого | Где покоится Сома?</title>
+  <meta name="description" content="Интерактивное историко-археологическое расследование местонахождения потерянной усыпальницы Александра Македонского: Александрия, Сива, Венеция, Амфиполис.">
+  
+  <!-- Google Fonts: Cinzel Decorative, Cinzel, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <style>
+    :root {
+      --gold-primary: #e6ca65;
+      --gold-light: #f7e7a9;
+      --gold-dark: #a2822a;
+      --gold-glow: rgba(230, 202, 101, 0.25);
+      --bg-dark: #0a0a0c;
+      --bg-card: #121217;
+      --bg-card-border: rgba(212, 175, 55, 0.2);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-dark);
+      color: #e5e5e7;
+      overflow-x: hidden;
+    }
+
+    .font-ancient {
+      font-family: 'Cinzel', serif;
+    }
+
+    .font-decor {
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    /* Gold gradients */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #fff3c4 0%, #e6ca65 40%, #b38d2f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .border-gold-gradient {
+      border-image: linear-gradient(to right, rgba(230, 202, 101, 0), rgba(230, 202, 101, 0.6), rgba(230, 202, 101, 0)) 1;
+    }
+
+    .gold-box-shadow {
+      box-shadow: 0 0 35px rgba(230, 202, 101, 0.12), inset 0 0 15px rgba(230, 202, 101, 0.05);
+    }
+
+    .gold-glow-btn:hover {
+      box-shadow: 0 0 25px rgba(230, 202, 101, 0.4);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0a0c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3a321d;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a2822a;
+    }
+
+    /* Ambient noise & sand overlay */
+    .sand-overlay {
+      background-image: radial-gradient(rgba(230, 202, 101, 0.08) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+
+    /* Map pulse animations */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 0.9; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+    .pulse-pin::before {
+      content: '';
+      position: absolute;
+      top: -4px; left: -4px; right: -4px; bottom: -4px;
+      border-radius: 50%;
+      border: 2px solid #e6ca65;
+      animation: pulse-ring 2.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    /* Greek Key Border SVG */
+    .greek-pattern {
+      background-repeat: repeat-x;
+      background-size: 24px 12px;
+      height: 12px;
+      opacity: 0.4;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12' viewBox='0 0 24 12'%3E%3Cpath fill='none' stroke='%23e6ca65' stroke-width='1.5' d='M0 1h20v10H8V5h8v2h-4'/%3E%3C/svg%3E");
+    }
+
+    /* Audio Equalizer bars */
+    .eq-bar {
+      transition: height 0.15s ease;
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-800 selection:text-amber-100">
+
+  <!-- Ambient Sound Generator & Navigation Bar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0c]/85 backdrop-blur-md border-b border-amber-900/30 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border border-amber-500/40 flex items-center justify-center bg-gradient-to-br from-amber-950 to-black group-hover:border-amber-400 transition-colors shadow-lg shadow-amber-900/20">
+          <!-- Vergina Sun / Star of Macedon 16-point icon -->
+          <svg class="w-6 h-6 text-amber-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="3.2" />
+            <path d="M12 2l1.2 4.5L12 6.2 10.8 6.5zM12 22l-1.2-4.5L12 17.8l1.2-.3zM2 12l4.5-1.2L6.2 12l.3 1.2zM22 12l-4.5 1.2L17.8 12l-.3-1.2zM4.9 4.9l3.8 2.2-.6-.9.9.6zM19.1 19.1l-3.8-2.2.6.9-.9-.6zM19.1 4.9l-2.2 3.8.9-.6-.6.9zM4.9 19.1l2.2-3.8-.9.6.6-.9z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-decor text-lg sm:text-xl tracking-wider text-gold-gradient block leading-tight">SEMA ALEXANDER</span>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-amber-400/70 block">Великая Тайна Гробницы</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 font-ancient text-sm tracking-widest text-neutral-300">
+        <a href="#hypotheses" class="hover:text-amber-400 transition-colors py-1 relative group">
+          Гипотезы
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#interactive-map" class="hover:text-amber-400 transition-colors py-1 relative group">
+          Карта Поисков
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#chronicle" class="hover:text-amber-400 transition-colors py-1 relative group">
+          Хроника Исчезновения
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#catafalque" class="hover:text-amber-400 transition-colors py-1 relative group">
+          Золотой Катафалк
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#excavate" class="hover:text-amber-400 transition-colors py-1 relative group">
+          Раскопки
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#profiler" class="hover:text-amber-400 transition-colors py-1 relative group">
+          Тест
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+
+      <!-- Right actions: Audio Ambient toggle & Mobile menu btn -->
+      <div class="flex items-center gap-3">
+        <!-- Audio button -->
+        <button id="audioToggleBtn" title="Атмосферный саундскейп пустыни и храма" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 hover:bg-amber-900/50 hover:border-amber-400/60 transition-all text-xs text-amber-200">
+          <span id="audioIcon" class="flex items-center gap-1">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+            </svg>
+          </span>
+          <span class="hidden sm:inline font-ancient text-[11px] tracking-wider" id="audioLabel">Эхо Веков</span>
+          <div class="hidden sm:flex items-end gap-0.5 h-3 w-4" id="audioBars">
+            <div class="w-1 bg-amber-400 rounded-full h-1 eq-bar"></div>
+            <div class="w-1 bg-amber-400 rounded-full h-2 eq-bar"></div>
+            <div class="w-1 bg-amber-400 rounded-full h-1 eq-bar"></div>
+          </div>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-amber-300 hover:text-amber-100 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#0c0c10] border-b border-amber-900/40 px-6 py-5 flex flex-col gap-4 font-ancient text-sm">
+      <a href="#hypotheses" class="text-amber-200/90 hover:text-amber-400 py-1">5 Главных Гипотез</a>
+      <a href="#interactive-map" class="text-amber-200/90 hover:text-amber-400 py-1">Интерактивная Карта</a>
+      <a href="#chronicle" class="text-amber-200/90 hover:text-amber-400 py-1">Хроника: От Цезаря до Исчезновения</a>
+      <a href="#catafalque" class="text-amber-200/90 hover:text-amber-400 py-1">Золотой Катафалк Диодора</a>
+      <a href="#excavate" class="text-amber-200/90 hover:text-amber-400 py-1">Виртуальные Раскопки</a>
+      <a href="#profiler" class="text-amber-200/90 hover:text-amber-400 py-1">Тест: Какая Теория Ваша?</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+    <!-- Background Image with Dark Vignette & Gold Gradient -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img src="https://images.pexels.com/photos/38861117/pexels-photo-38861117.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1400&w=2100" 
+           alt="Древние руины и мраморные колонны" 
+           class="w-full h-full object-cover object-center filter brightness-[0.25] contrast-[1.1] scale-105 animate-[pulse_10s_ease-in-out_infinite]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/80 to-transparent"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-600/10 via-black/40 to-[#0a0a0c]"></div>
+      <!-- Canvas for dust particle simulation -->
+      <canvas id="sandParticleCanvas" class="absolute inset-0 w-full h-full opacity-60"></canvas>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      
+      <!-- Top Tag badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/40 bg-amber-950/50 backdrop-blur-md mb-8 shadow-lg shadow-amber-950/40 animate-fade-in">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span class="font-ancient text-xs tracking-[0.2em] text-amber-200 uppercase">Величайшая загадка археологии • 323 до н.э. — 2026 н.э.</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-decor tracking-wider leading-[1.1] mb-6">
+        <span class="block text-neutral-300 text-2xl sm:text-3xl md:text-4xl font-ancient tracking-[0.3em] font-normal mb-2 text-amber-300/80">
+          ГДЕ ПОКОИТСЯ ВЛАСТЕЛИН МИРА?
+        </span>
+        <span class="text-gold-gradient drop-shadow-2xl">
+          ГРОБНИЦА АЛЕКСАНДРА
+        </span>
+      </h1>
+
+      <!-- Greek Quote or Latin phrase -->
+      <p class="font-ancient text-lg sm:text-xl text-amber-400/90 max-w-3xl mx-auto italic mb-6">
+        «Где ныне могила Александра? Покажите мне её, укажите день его кончины...»
+        <span class="block text-xs not-italic text-neutral-400 font-sans mt-1">— Святитель Иоанн Златоуст, ок. 400 г. н.э.</span>
+      </p>
+
+      <!-- Description -->
+      <p class="text-neutral-300 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-10 font-light">
+        В золотом саркофаге, скрытом в хрустале, его тело веками почитали Цезарь, Октавиан Август и Каракалла. 
+        Затем погребение исчезло без следа. Находится ли оно под мечетью в Александрии, в песках оазиса Сива, 
+        в базилике Святого Марка в Венеции или под курганом Амфиполиса?
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-ancient text-sm">
+        <a href="#hypotheses" class="px-8 py-4 rounded-md bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-black font-bold tracking-widest uppercase hover:brightness-110 transition-all gold-glow-btn flex items-center gap-3 shadow-xl">
+          <span>Исследовать 5 гипотез</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <a href="#interactive-map" class="px-8 py-4 rounded-md border border-amber-500/50 bg-black/60 text-amber-200 hover:bg-amber-950/40 hover:border-amber-400 tracking-widest uppercase transition-all flex items-center gap-2 backdrop-blur-sm">
+          <span>Интерактивная карта</span>
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Quick Stats Counter -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto pt-8 border-t border-amber-900/40">
+        <div class="p-3 text-center">
+          <div class="text-2xl sm:text-3xl font-ancient font-bold text-amber-300">323 г. до н.э.</div>
+          <div class="text-xs text-neutral-400 mt-1 uppercase tracking-wider">Смерть в Вавилоне</div>
+        </div>
+        <div class="p-3 text-center">
+          <div class="text-2xl sm:text-3xl font-ancient font-bold text-amber-300">700+ лет</div>
+          <div class="text-xs text-neutral-400 mt-1 uppercase tracking-wider">Тело было доступно</div>
+        </div>
+        <div class="p-3 text-center">
+          <div class="text-2xl sm:text-3xl font-ancient font-bold text-amber-300">140+</div>
+          <div class="text-xs text-neutral-400 mt-1 uppercase tracking-wider">Официальных экспедиций</div>
+        </div>
+        <div class="p-3 text-center">
+          <div class="text-2xl sm:text-3xl font-ancient font-bold text-amber-300">0</div>
+          <div class="text-xs text-neutral-400 mt-1 uppercase tracking-wider">Окончательных доказательств</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Decorative Greek key border bottom -->
+    <div class="absolute bottom-0 left-0 w-full greek-pattern"></div>
+  </section>
+
+  <!-- Section 1: The 5 Groundbreaking Hypotheses (Interactive Hub) -->
+  <section id="hypotheses" class="py-24 relative bg-[#0e0e13] sand-overlay">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="font-ancient text-xs tracking-[0.3em] text-amber-400 uppercase mb-2">Архив следствий и теорий</div>
+        <h2 class="text-3xl sm:text-5xl font-decor text-gold-gradient mb-6">5 Главных Мест Захоронения</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mb-6"></div>
+        <p class="text-neutral-300 text-sm sm:text-base leading-relaxed">
+          За 2300 лет археологи, историки и авантюристы выдвинули десятки версий. 
+          Выберите гипотезу ниже, чтобы изучить вещественные доказательства, аргументы сторонников и контрверсии.
+        </p>
+      </div>
+
+      <!-- Theory Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10" id="hypothesisTabButtons">
+        <button data-theory="alexandria" class="theory-btn active px-5 py-2.5 rounded-md font-ancient text-xs sm:text-sm tracking-wider uppercase border border-amber-500 bg-amber-500/20 text-amber-200 transition-all flex items-center gap-2">
+          <span>🏛️</span> Александрия (Сома)
+        </button>
+        <button data-theory="venice" class="theory-btn px-5 py-2.5 rounded-md font-ancient text-xs sm:text-sm tracking-wider uppercase border border-amber-500/30 bg-[#16161d] text-neutral-300 hover:border-amber-400 transition-all flex items-center gap-2">
+          <span>🦁</span> Венеция (Собор Св. Марка)
+        </button>
+        <button data-theory="siwa" class="theory-btn px-5 py-2.5 rounded-md font-ancient text-xs sm:text-sm tracking-wider uppercase border border-amber-500/30 bg-[#16161d] text-neutral-300 hover:border-amber-400 transition-all flex items-center gap-2">
+          <span>☀️</span> Оазис Сива (Храм Амона)
+        </button>
+        <button data-theory="amphipolis" class="theory-btn px-5 py-2.5 rounded-md font-ancient text-xs sm:text-sm tracking-wider uppercase border border-amber-500/30 bg-[#16161d] text-neutral-300 hover:border-amber-400 transition-all flex items-center gap-2">
+          <span>👑</span> Амфиполис (Холм Каста)
+        </button>
+        <button data-theory="memphis" class="theory-btn px-5 py-2.5 rounded-md font-ancient text-xs sm:text-sm tracking-wider uppercase border border-amber-500/30 bg-[#16161d] text-neutral-300 hover:border-amber-400 transition-all flex items-center gap-2">
+          <span>🏺</span> Мемфис (Серапеум Саккары)
+        </button>
+      </div>
+
+      <!-- Hypothesis Dynamic Showcase Card -->
+      <div id="hypothesisCard" class="bg-[#121218] border border-amber-500/30 rounded-xl overflow-hidden shadow-2xl gold-box-shadow transition-all duration-500">
+        <!-- Content injected via JS -->
+      </div>
+
+      <!-- Comparison Matrix Table -->
+      <div class="mt-20">
+        <h3 class="text-xl sm:text-2xl font-ancient text-amber-300 mb-6 flex items-center gap-3">
+          <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          Сравнительная Матрица Вероятности Гипотез
+        </h3>
+        
+        <div class="overflow-x-auto rounded-lg border border-amber-900/40 bg-[#101015]">
+          <table class="w-full text-left text-xs sm:text-sm text-neutral-300">
+            <thead class="bg-amber-950/40 text-amber-300 font-ancient tracking-wider uppercase border-b border-amber-900/40">
+              <tr>
+                <th class="py-4 px-4 sm:px-6">Локация</th>
+                <th class="py-4 px-3 sm:px-4">Античные Тексты</th>
+                <th class="py-4 px-3 sm:px-4">Археология</th>
+                <th class="py-4 px-3 sm:px-4">Сохранность</th>
+                <th class="py-4 px-3 sm:px-4">Ключевой Аргумент</th>
+                <th class="py-4 px-4 sm:px-6 text-right">Вероятность</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-amber-900/20 font-light">
+              <tr class="hover:bg-amber-950/20 transition-colors">
+                <td class="py-4 px-4 sm:px-6 font-semibold text-amber-200">Александрия (Квартал Сема)</td>
+                <td class="py-4 px-3 sm:px-4 text-emerald-400">★★★★★ (Максимально)</td>
+                <td class="py-4 px-3 sm:px-4 text-amber-400">★★★☆☆ (Статуя 2019 г.)</td>
+                <td class="py-4 px-3 sm:px-4 text-red-400">★☆☆☆☆ (Цунами, застройка)</td>
+                <td class="py-4 px-3 sm:px-4">Официальная усыпальница Птолемеев до 391 г. н.э.</td>
+                <td class="py-4 px-4 sm:px-6 text-right font-bold text-amber-400 font-ancient text-base">65%</td>
+              </tr>
+              <tr class="hover:bg-amber-950/20 transition-colors">
+                <td class="py-4 px-4 sm:px-6 font-semibold text-amber-200">Венеция (Собор Святого Марка)</td>
+                <td class="py-4 px-3 sm:px-4 text-amber-400">★★★☆☆ (Хроники 828 г.)</td>
+                <td class="py-4 px-3 sm:px-4 text-emerald-400">★★★★☆ (Щит с солнцем)</td>
+                <td class="py-4 px-3 sm:px-4 text-emerald-400">★★★★★ (Мумия в крипте)</td>
+                <td class="py-4 px-3 sm:px-4">Подмена тела языческого царя святым апостолом</td>
+                <td class="py-4 px-4 sm:px-6 text-right font-bold text-amber-400 font-ancient text-base">18%</td>
+              </tr>
+              <tr class="hover:bg-amber-950/20 transition-colors">
+                <td class="py-4 px-4 sm:px-6 font-semibold text-amber-200">Оазис Сива (Храм Амона)</td>
+                <td class="py-4 px-3 sm:px-4 text-amber-400">★★★★☆ (Завещание царя)</td>
+                <td class="py-4 px-3 sm:px-4 text-amber-400">★★☆☆☆ (Находки Сувальци)</td>
+                <td class="py-4 px-3 sm:px-4 text-emerald-400">★★★★☆ (Сухой песок пустыни)</td>
+                <td class="py-4 px-3 sm:px-4">Личное желание быть погребенным у отца Амона</td>
+                <td class="py-4 px-4 sm:px-6 text-right font-bold text-amber-400 font-ancient text-base">10%</td>
+              </tr>
+              <tr class="hover:bg-amber-950/20 transition-colors">
+                <td class="py-4 px-4 sm:px-6 font-semibold text-amber-200">Амфиполис (Курган Каста)</td>
+                <td class="py-4 px-3 sm:px-4 text-red-400">★☆☆☆☆ (Нет указаний)</td>
+                <td class="py-4 px-3 sm:px-4 text-emerald-400">★★★★★ (Грандиозный мавзолей)</td>
+                <td class="py-4 px-3 sm:px-4 text-amber-400">★★★☆☆ (Разграблен в древности)</td>
+                <td class="py-4 px-3 sm:px-4">Кенотаф или усыпальница Роксаны/Гефестиона</td>
+                <td class="py-4 px-4 sm:px-6 text-right font-bold text-amber-400 font-ancient text-base">5%</td>
+              </tr>
+              <tr class="hover:bg-amber-950/20 transition-colors">
+                <td class="py-4 px-4 sm:px-6 font-semibold text-amber-200">Мемфис (Саккара)</td>
+                <td class="py-4 px-3 sm:px-4 text-emerald-400">★★★★★ (Первые 40 лет)</td>
+                <td class="py-4 px-3 sm:px-4 text-amber-400">★★★☆☆ (Подземные галереи)</td>
+                <td class="py-4 px-3 sm:px-4 text-amber-400">★★★☆☆ (Катакомбы)</td>
+                <td class="py-4 px-3 sm:px-4">Возможно, тело так и не покинуло Мемфис</td>
+                <td class="py-4 px-4 sm:px-6 text-right font-bold text-amber-400 font-ancient text-base">2%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2: Interactive Archaeological Map -->
+  <section id="interactive-map" class="py-24 relative bg-[#0a0a0d] border-t border-b border-amber-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="font-ancient text-xs tracking-[0.3em] text-amber-400 uppercase mb-2">География древнего Средиземноморья</div>
+          <h2 class="text-3xl sm:text-5xl font-decor text-gold-gradient">Интерактивная Карта Поисков</h2>
+        </div>
+        <p class="text-neutral-400 text-sm max-w-md">
+          Нажмите на ключевую точку на карте или в меню, чтобы просмотреть координаты раскопок, глубину залегания и статус объектов.
+        </p>
+      </div>
+
+      <!-- Map + Sidebar Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Interactive SVG & Canvas Map (8 cols) -->
+        <div class="lg:col-span-8 bg-[#111116] border border-amber-500/30 rounded-xl p-4 sm:p-6 relative overflow-hidden shadow-2xl">
+          <div class="flex items-center justify-between mb-4 border-b border-amber-900/40 pb-3">
+            <span class="font-ancient text-xs text-amber-300 tracking-wider flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              КАРТА ЭКСПЕДИЦИЙ И МАРШРУТА ТЕЛА АЛЕКСАНДРА (323 ДО Н.Э. - 2026 Н.Э.)
+            </span>
+            <div class="text-[11px] text-neutral-400 font-mono">31°12'N • 29°55'E</div>
+          </div>
+
+          <!-- SVG Ancient styled Map -->
+          <div class="relative w-full aspect-[16/10] bg-[#0c0d12] rounded-lg border border-amber-950 overflow-hidden select-none" id="mapContainer">
+            
+            <!-- Mediterranean Coastlines Vector Representation -->
+            <svg class="w-full h-full" viewBox="0 0 900 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="waterGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#111624" />
+                  <stop offset="100%" stop-color="#080a10" />
+                </radialGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Sea Water Background -->
+              <rect width="900" height="560" fill="url(#waterGrad)"/>
+
+              <!-- Grid Lat/Long lines -->
+              <path d="M0 140 H900 M0 280 H900 M0 420 H900 M225 0 V560 M450 0 V560 M675 0 V560" stroke="#a2822a" stroke-width="0.5" stroke-dasharray="4 6" opacity="0.2"/>
+
+              <!-- Simplified Mediterranean / Egypt / Greece / Italy land masses -->
+              <!-- Italy & Venice -->
+              <path d="M120 40 L160 30 L210 60 L230 110 L190 140 L230 190 L260 210 L280 260 L240 280 L200 220 L160 160 L140 110 Z" fill="#181822" stroke="#a2822a" stroke-width="1.2" opacity="0.8"/>
+              <!-- Greece & Macedonia -->
+              <path d="M380 90 L440 80 L490 100 L500 140 L460 170 L470 210 L430 250 L390 230 L400 170 L360 140 Z" fill="#181822" stroke="#a2822a" stroke-width="1.2" opacity="0.8"/>
+              <!-- Asia Minor / Turkey -->
+              <path d="M520 110 L680 120 L760 160 L780 220 L680 230 L590 210 L540 180 Z" fill="#181822" stroke="#a2822a" stroke-width="1.2" opacity="0.8"/>
+              <!-- Levant / Syria / Mesopotamia -->
+              <path d="M780 230 L840 260 L890 320 L860 400 L760 360 L720 310 L740 260 Z" fill="#181822" stroke="#a2822a" stroke-width="1.2" opacity="0.8"/>
+              <!-- North Africa & Egypt -->
+              <path d="M80 440 L220 410 L380 430 L470 410 L520 420 L580 440 L640 420 L720 380 L760 430 L740 540 L100 540 Z" fill="#181822" stroke="#a2822a" stroke-width="1.2" opacity="0.8"/>
+              <!-- Nile Delta -->
+              <path d="M550 420 L580 460 L620 425 Z" fill="#24211a" stroke="#d4af37" stroke-width="1" opacity="0.9"/>
+              <!-- Nile River line -->
+              <path d="M580 460 Q590 510 585 550" stroke="#3b82f6" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+
+              <!-- Historic Funeral Journey Route: Babylon -> Damascus -> Memphis -> Alexandria -->
+              <path id="routeFuneral" d="M850 340 Q750 310 680 340 T585 460 Q550 430 545 415" 
+                    fill="none" stroke="#e6ca65" stroke-width="2.5" stroke-dasharray="6 4" opacity="0.85" filter="url(#glow)"/>
+
+              <!-- Venetian Smuggling Route: Alexandria -> Venice (828 AD) -->
+              <path id="routeVenice" d="M545 415 Q380 280 190 70" 
+                    fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
+
+              <!-- Siwa Oasis Desert Route: Alexandria -> Siwa -->
+              <path id="routeSiwa" d="M545 415 Q480 440 430 465" 
+                    fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 4" opacity="0.7"/>
+
+              <!-- Map Labels -->
+              <text x="280" y="240" fill="#a2822a" font-family="Cinzel" font-size="12" opacity="0.4" letter-spacing="3">MARE INTERNUM (СРЕДИЗЕМНОЕ МОРЕ)</text>
+              <text x="800" y="325" fill="#e6ca65" font-family="Cinzel" font-size="10" opacity="0.7">ВАВИЛОН (323 г. до н.э.)</text>
+            </svg>
+
+            <!-- Map Interactive Pins -->
+            
+            <!-- Pin 1: Alexandria -->
+            <button class="map-pin absolute top-[74%] left-[60.5%] -translate-x-1/2 -translate-y-1/2 group focus:outline-none" data-pin="alexandria">
+              <div class="relative flex items-center justify-center w-8 h-8">
+                <span class="absolute w-8 h-8 rounded-full bg-amber-500/30 pulse-pin"></span>
+                <span class="w-4 h-4 rounded-full bg-amber-400 border-2 border-black group-hover:scale-125 transition-transform shadow-lg shadow-amber-400/50"></span>
+              </div>
+              <span class="absolute top-8 left-1/2 -translate-x-1/2 bg-black/90 text-amber-200 border border-amber-500/50 text-[10px] font-ancient font-bold px-2 py-0.5 rounded whitespace-nowrap shadow-md group-hover:border-amber-300">
+                АЛЕКСАНДРИЯ (СОМА)
+              </span>
+            </button>
+
+            <!-- Pin 2: Venice -->
+            <button class="map-pin absolute top-[12.5%] left-[21.1%] -translate-x-1/2 -translate-y-1/2 group focus:outline-none" data-pin="venice">
+              <div class="relative flex items-center justify-center w-7 h-7">
+                <span class="w-3.5 h-3.5 rounded-full bg-blue-400 border-2 border-black group-hover:scale-125 transition-transform shadow-lg shadow-blue-400/50"></span>
+              </div>
+              <span class="absolute top-7 left-1/2 -translate-x-1/2 bg-black/90 text-blue-200 border border-blue-500/50 text-[10px] font-ancient font-bold px-2 py-0.5 rounded whitespace-nowrap shadow-md">
+                ВЕНЕЦИЯ (СВ. МАРК)
+              </span>
+            </button>
+
+            <!-- Pin 3: Siwa Oasis -->
+            <button class="map-pin absolute top-[83%] left-[47.8%] -translate-x-1/2 -translate-y-1/2 group focus:outline-none" data-pin="siwa">
+              <div class="relative flex items-center justify-center w-7 h-7">
+                <span class="w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-black group-hover:scale-125 transition-transform shadow-lg shadow-amber-500/50"></span>
+              </div>
+              <span class="absolute top-7 left-1/2 -translate-x-1/2 bg-black/90 text-amber-200 border border-amber-500/50 text-[10px] font-ancient font-bold px-2 py-0.5 rounded whitespace-nowrap shadow-md">
+                ОАЗИС СИВА
+              </span>
+            </button>
+
+            <!-- Pin 4: Amphipolis -->
+            <button class="map-pin absolute top-[21%] left-[48%] -translate-x-1/2 -translate-y-1/2 group focus:outline-none" data-pin="amphipolis">
+              <div class="relative flex items-center justify-center w-7 h-7">
+                <span class="w-3.5 h-3.5 rounded-full bg-purple-400 border-2 border-black group-hover:scale-125 transition-transform shadow-lg shadow-purple-400/50"></span>
+              </div>
+              <span class="absolute top-7 left-1/2 -translate-x-1/2 bg-black/90 text-purple-200 border border-purple-500/50 text-[10px] font-ancient font-bold px-2 py-0.5 rounded whitespace-nowrap shadow-md">
+                АМФИПОЛИС (ГРЕЦИЯ)
+              </span>
+            </button>
+
+            <!-- Pin 5: Memphis / Saqqara -->
+            <button class="map-pin absolute top-[82%] left-[65%] -translate-x-1/2 -translate-y-1/2 group focus:outline-none" data-pin="memphis">
+              <div class="relative flex items-center justify-center w-7 h-7">
+                <span class="w-3.5 h-3.5 rounded-full bg-yellow-500 border-2 border-black group-hover:scale-125 transition-transform shadow-lg shadow-yellow-500/50"></span>
+              </div>
+              <span class="absolute top-7 left-1/2 -translate-x-1/2 bg-black/90 text-yellow-200 border border-yellow-500/50 text-[10px] font-ancient font-bold px-2 py-0.5 rounded whitespace-nowrap shadow-md">
+                МЕМФИС (САККАРА)
+              </span>
+            </button>
+
+            <!-- Pin 6: Babylon -->
+            <button class="map-pin absolute top-[61%] left-[94.4%] -translate-x-1/2 -translate-y-1/2 group focus:outline-none" data-pin="babylon">
+              <div class="relative flex items-center justify-center w-6 h-6">
+                <span class="w-3 h-3 rounded-full bg-red-400 border-2 border-black group-hover:scale-125 transition-transform shadow-lg shadow-red-400/50"></span>
+              </div>
+              <span class="absolute -top-6 left-1/2 -translate-x-1/2 bg-black/90 text-red-200 border border-red-500/50 text-[10px] font-ancient font-bold px-2 py-0.5 rounded whitespace-nowrap shadow-md">
+                ВАВИЛОН
+              </span>
+            </button>
+
+          </div>
+
+          <!-- Map Legend -->
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-4 text-[11px] text-neutral-400 font-ancient">
+            <div class="flex items-center gap-4">
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Главный кандидат</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span> Венецианский след</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span> Курган Каста</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400"></span> Исходная точка</span>
+            </div>
+            <div class="text-amber-400/80">
+              * Кликните по маркеру для открытия досье
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Detailed Dossier for Selected Pin (4 cols) -->
+        <div class="lg:col-span-4 bg-[#121218] border border-amber-500/30 rounded-xl p-6 shadow-xl gold-box-shadow" id="mapDossier">
+          <!-- Filled dynamically by JavaScript -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: The Imperial Chronicle: From Caesar to Total Vanishing -->
+  <section id="chronicle" class="py-24 relative bg-[#0e0e13]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="font-ancient text-xs tracking-[0.3em] text-amber-400 uppercase mb-2">Свидетельства очевидцев античности</div>
+        <h2 class="text-3xl sm:text-5xl font-decor text-gold-gradient mb-6">Хроника: Кто Видел Мумию?</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mb-6"></div>
+        <p class="text-neutral-300 text-sm sm:text-base leading-relaxed">
+          Тело Александра не было тайной в эпоху Римской империи. Величайшие императоры Рима лично спускались в склеп Сомы, 
+          трогали саркофаг и оставляли свои реликвии. Как же оно исчезло?
+        </p>
+      </div>
+
+      <!-- Timeline Interactive Vertical Track -->
+      <div class="relative border-l-2 border-amber-500/30 ml-4 sm:ml-32 md:ml-40 space-y-12 pb-8">
+        
+        <!-- Timeline Item 1: 323 BC -->
+        <div class="relative pl-8 sm:pl-12 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-black group-hover:scale-125 transition-transform"></div>
+          <div class="hidden sm:block absolute -left-36 top-1 text-right font-ancient font-bold text-amber-300 text-sm">323 до н.э.</div>
+          
+          <div class="bg-[#14141a] border border-amber-900/40 rounded-lg p-5 hover:border-amber-500/50 transition-all">
+            <span class="sm:hidden inline-block font-ancient font-bold text-amber-300 text-xs mb-1">323 г. до н.э.</span>
+            <h3 class="font-ancient text-lg text-amber-200 mb-2">Смерть в Вавилоне и перехват тела Птолемеем</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed mb-3">
+              Александр умирает в возрасте 32 лет. Два года строится невиданный золотой катафалк для перевозки в Македонию. 
+              Однако генерал Птолемей I Сотер совершает дерзкий перехват кортежа в Сирии и везет тело в Египет — сначала в древний Мемфис.
+            </p>
+            <div class="text-xs text-amber-400/80 italic font-ancient">Источник: Диодор Сицилийский, Павсаний</div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: ~280-215 BC -->
+        <div class="relative pl-8 sm:pl-12 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-black group-hover:scale-125 transition-transform"></div>
+          <div class="hidden sm:block absolute -left-36 top-1 text-right font-ancient font-bold text-amber-300 text-sm">~280–215 до н.э.</div>
+          
+          <div class="bg-[#14141a] border border-amber-900/40 rounded-lg p-5 hover:border-amber-500/50 transition-all">
+            <span class="sm:hidden inline-block font-ancient font-bold text-amber-300 text-xs mb-1">~280–215 до н.э.</span>
+            <h3 class="font-ancient text-lg text-amber-200 mb-2">Строительство мавзолея «Сома» в Александрии</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed mb-3">
+              Птолемей II Филадельф (или Птолемей IV Филопатор) переносит останки в сердце Александрии на перекресток двух главных проспектов (Канопского и Сомы). 
+              Воздвигнут монументальный мавзолей, где позже погребают и самих царей династии Птолемеев.
+            </p>
+            <div class="text-xs text-amber-400/80 italic font-ancient">Источник: Страбон (География, Книга XVII)</div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3: 48 BC -->
+        <div class="relative pl-8 sm:pl-12 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-black group-hover:scale-125 transition-transform"></div>
+          <div class="hidden sm:block absolute -left-36 top-1 text-right font-ancient font-bold text-amber-300 text-sm">48 до н.э.</div>
+          
+          <div class="bg-[#14141a] border border-amber-900/40 rounded-lg p-5 hover:border-amber-500/50 transition-all">
+            <span class="sm:hidden inline-block font-ancient font-bold text-amber-300 text-xs mb-1">48 г. до н.э.</span>
+            <h3 class="font-ancient text-lg text-amber-200 mb-2">Юлий Цезарь в слезах у гроба кумира</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed mb-3">
+              Победив в Александрийской войне, Юлий Цезарь требует немедленно отвести его в гробницу. 
+              Глядя на нетленное тело тридцатидвухлетнего властелина Азии, 52-летний Цезарь разрыдался, коря себя за то, что совершил так мало в сравнении с ним.
+            </p>
+            <div class="text-xs text-amber-400/80 italic font-ancient">Источник: Лукан (Фарсалия), Светоний</div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4: 30 BC -->
+        <div class="relative pl-8 sm:pl-12 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-black group-hover:scale-125 transition-transform"></div>
+          <div class="hidden sm:block absolute -left-36 top-1 text-right font-ancient font-bold text-amber-300 text-sm">30 до н.э.</div>
+          
+          <div class="bg-[#14141a] border border-amber-900/40 rounded-lg p-5 hover:border-amber-500/50 transition-all">
+            <span class="sm:hidden inline-block font-ancient font-bold text-amber-300 text-xs mb-1">30 г. до н.э.</span>
+            <h3 class="font-ancient text-lg text-amber-200 mb-2">Октавиан Август и сломанный нос мумии</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed mb-3">
+              После падения Антония и Клеопатры Октавиан Август возложил на голову Александра золотой венец и осыпал цветами. 
+              Когда его спросили, хочет ли он взглянуть и на гробницы Птолемеев, Август надменно ответил: 
+              <em>«Я пришел увидеть царя, а не мертвецов!»</em>. Прикоснувшись к лицу мумии, он случайно отломил кончик носа.
+            </p>
+            <div class="text-xs text-amber-400/80 italic font-ancient">Источник: Дион Кассий (Римская история, LI.16), Светоний</div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5: 199–215 AD -->
+        <div class="relative pl-8 sm:pl-12 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-black group-hover:scale-125 transition-transform"></div>
+          <div class="hidden sm:block absolute -left-36 top-1 text-right font-ancient font-bold text-amber-300 text-sm">199–215 н.э.</div>
+          
+          <div class="bg-[#14141a] border border-amber-900/40 rounded-lg p-5 hover:border-amber-500/50 transition-all">
+            <span class="sm:hidden inline-block font-ancient font-bold text-amber-300 text-xs mb-1">199–215 г. н.э.</span>
+            <h3 class="font-ancient text-lg text-amber-200 mb-2">Опечатывание Севером и последний визит Каракаллы</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed mb-3">
+              Септимий Север в 199 г. н.э., потрясенный святотатством зевак, собрал все тайные книги о магии и запечатал вход в усыпальницу, запретив доступ кому-либо. 
+              Однако в 215 г. н.э. его сын император Каракалла, помешанный на культе Александра, вновь вскрыл гробницу, снял свой пурпурный плащ, перстни и пояс и возложил их на саркофаг. 
+              <strong>Это последнее документально зафиксированное посещение гробницы очевидцем в истории.</strong>
+            </p>
+            <div class="text-xs text-amber-400/80 italic font-ancient">Источник: Геродиан (IV.8), Дион Кассий (LXXVII.7)</div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 6: 365–391 AD -->
+        <div class="relative pl-8 sm:pl-12 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-red-500 border-4 border-black group-hover:scale-125 transition-transform"></div>
+          <div class="hidden sm:block absolute -left-36 top-1 text-right font-ancient font-bold text-red-400 text-sm">365–391 н.э.</div>
+          
+          <div class="bg-[#1a1214] border border-red-900/40 rounded-lg p-5 hover:border-red-500/50 transition-all">
+            <span class="sm:hidden inline-block font-ancient font-bold text-red-400 text-xs mb-1">365–391 г. н.э.</span>
+            <h3 class="font-ancient text-lg text-red-200 mb-2">Великое Цунами и Разгром Языческих Святилищ</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed mb-3">
+              21 июля 365 г. колоссальное землетрясение на Крите породило цунами, затопившее Александрию и разрушившее прибрежные кварталы Брухийона. 
+              Затем в 391 г. патриарх Феофил по указу Феодосия сжигает и крушит храмы язычников (включая Серапеум). 
+              Прах великого полководца либо погребен под метрами ила и обломков, либо тайно перепрятан преданными жрецами, либо выдан за христианские мощи.
+            </p>
+            <div class="text-xs text-red-400/80 italic font-ancient">Источник: Аммиан Марцеллин, Иоанн Златоуст</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Reconstruction of Diodorus's Golden Hearse (Катафалк Диодора) -->
+  <section id="catafalque" class="py-24 relative bg-[#09090c] border-t border-amber-900/30 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Explanatory Dossier (6 cols) -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="font-ancient text-xs tracking-[0.3em] text-amber-400 uppercase">Шедевр погребальной инженерии</div>
+          <h2 class="text-3xl sm:text-5xl font-decor text-gold-gradient leading-tight">
+            Золотой Катафалк: Самый Роскошный Кортеж в Истории
+          </h2>
+          <p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+            Диодор Сицилийский подробно описал передвижной храм, который строился два года архитектором Арридеем 
+            для перевозки саркофага Александра. Кортеж двигался со скоростью несколько километров в день, собирая толпы со всего Востока.
+          </p>
+
+          <!-- Feature Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-lg bg-[#14141a] border border-amber-900/30">
+              <div class="text-amber-400 font-ancient font-bold text-sm mb-1">64 Королевских Мула</div>
+              <p class="text-neutral-400 text-xs leading-relaxed">
+                Тянули повозку в 4 ряда по 16 мулов, каждый в золоченом венце и колокольчиках.
+              </p>
+            </div>
+            <div class="p-4 rounded-lg bg-[#14141a] border border-amber-900/30">
+              <div class="text-amber-400 font-ancient font-bold text-sm mb-1">Золотой Саркофаг и Мед</div>
+              <p class="text-neutral-400 text-xs leading-relaxed">
+                Кованое золото высшей пробы, заполненное редкими бальзамами и белым медом для бальзамирования.
+              </p>
+            </div>
+            <div class="p-4 rounded-lg bg-[#14141a] border border-amber-900/30">
+              <div class="text-amber-400 font-ancient font-bold text-sm mb-1">Храм с Ионическими Колоннами</div>
+              <p class="text-neutral-400 text-xs leading-relaxed">
+                Сводчатый павильон высотой более 6 метров с кессонным золотым потолком и пурпурным пологом.
+              </p>
+            </div>
+            <div class="p-4 rounded-lg bg-[#14141a] border border-amber-900/30">
+              <div class="text-amber-400 font-ancient font-bold text-sm mb-1">Четыре Барельефа Побед</div>
+              <p class="text-neutral-400 text-xs leading-relaxed">
+                Александр на колеснице, слоны в бою, македонская фаланга и флот Неарха.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg border-l-4 border-amber-400 bg-amber-950/20 text-xs text-amber-200/90 leading-relaxed font-ancient">
+            «Куда делся этот колоссальный объем золота? Позже царица Клеопатра VII переплавила часть саркофага для чеканки монеты в войне против Рима, заменив его на хрустальный гроб...»
+          </div>
+        </div>
+
+        <!-- Right: Interactive Visual Diagram / Exploration (6 cols) -->
+        <div class="lg:col-span-6 bg-[#111116] border border-amber-500/30 rounded-2xl p-6 sm:p-8 relative shadow-2xl gold-box-shadow">
+          <div class="text-center mb-6">
+            <span class="text-xs uppercase tracking-widest text-amber-400/80 font-ancient">Интерактивная реконструкция</span>
+            <h3 class="font-ancient text-xl text-neutral-200 mt-1">Анатомия Усыпальницы Александра</h3>
+          </div>
+
+          <!-- Interactive layered visual selector -->
+          <div class="space-y-4" id="catafalqueLayers">
+            
+            <div class="layer-item p-4 rounded-lg border border-amber-500/50 bg-amber-950/30 cursor-pointer transition-all hover:bg-amber-900/30" data-layer="roof">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="w-7 h-7 rounded-full bg-amber-400 text-black font-bold flex items-center justify-center text-xs">I</span>
+                  <span class="font-ancient font-bold text-sm text-amber-300">Золотой Кессонный Свод и Сеть</span>
+                </div>
+                <span class="text-xs text-neutral-400">Свод 8×12 локтей</span>
+              </div>
+              <p class="text-xs text-neutral-300 mt-2 leading-relaxed hidden layer-desc">
+                Кровля состояла из чешуйчатых пластин чистого золота, увенчанная гигантским золотым венцом оливы, отражавшим солнце на километры вокруг.
+              </p>
+            </div>
+
+            <div class="layer-item p-4 rounded-lg border border-amber-500/30 bg-[#16161f] cursor-pointer transition-all hover:bg-amber-950/30" data-layer="sarcophagus">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="w-7 h-7 rounded-full bg-amber-500/50 text-amber-100 font-bold flex items-center justify-center text-xs">II</span>
+                  <span class="font-ancient font-bold text-sm text-amber-300">Хриселифантинный Саркофаг</span>
+                </div>
+                <span class="text-xs text-neutral-400">Форма тела</span>
+              </div>
+              <p class="text-xs text-neutral-300 mt-2 leading-relaxed hidden layer-desc">
+                Золотой саркофаг был выбит точно по контурам тела Александра. Поверх саркофага лежал драгоценный пурпурный саван с золотым шитьем и доспехи царя.
+              </p>
+            </div>
+
+            <div class="layer-item p-4 rounded-lg border border-amber-500/30 bg-[#16161f] cursor-pointer transition-all hover:bg-amber-950/30" data-layer="chassis">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="w-7 h-7 rounded-full bg-amber-500/50 text-amber-100 font-bold flex items-center justify-center text-xs">III</span>
+                  <span class="font-ancient font-bold text-sm text-amber-300">Ходовая Часть с Рессорами и Муфтами</span>
+                </div>
+                <span class="text-xs text-neutral-400">4 колеса с золотыми спицами</span>
+              </div>
+              <p class="text-xs text-neutral-300 mt-2 leading-relaxed hidden layer-desc">
+                Оси колес были снабжены сложнейшей системой шарниров, чтобы сглаживать тряску на неровных каменистых дорогах востока и предотвратить повреждение тела.
+              </p>
+            </div>
+
+            <div class="layer-item p-4 rounded-lg border border-amber-500/30 bg-[#16161f] cursor-pointer transition-all hover:bg-amber-950/30" data-layer="crystal">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="w-7 h-7 rounded-full bg-amber-500/50 text-amber-100 font-bold flex items-center justify-center text-xs">IV</span>
+                  <span class="font-ancient font-bold text-sm text-amber-300">Позднейший Хрустальный Саркофаг («Хюалос»)</span>
+                </div>
+                <span class="text-xs text-neutral-400">Эпоха Клеопатры и Рима</span>
+              </div>
+              <p class="text-xs text-neutral-300 mt-2 leading-relaxed hidden layer-desc">
+                Именно сквозь прозрачный александрийский хрусталь/стекло Юлий Цезарь и Октавиан Август созерцали лицо Македонца в полумраке склепа.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="mt-6 text-center text-xs text-neutral-400 italic">
+            Нажмите на любой элемент конструкции, чтобы открыть детальное археологическое описание
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 5: Interactive Virtual Excavation Game (Интерактивные раскопки) -->
+  <section id="excavate" class="py-24 relative bg-[#0c0c11] sand-overlay">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      
+      <div class="font-ancient text-xs tracking-[0.3em] text-amber-400 uppercase mb-2">Лаборатория практической археологии</div>
+      <h2 class="text-3xl sm:text-5xl font-decor text-gold-gradient mb-4">Виртуальные Раскопки в Александрии</h2>
+      <p class="text-neutral-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-light">
+        В садах Шаллалат греческий археолог Каллиопи Лимнеос-Папакоста копает уже более 14 лет на глубине свыше 10 метров. 
+        Попробуйте расчистить археологический горизонт кистью, чтобы найти уникальный артефакт!
+      </p>
+
+      <!-- Excavation Canvas Container -->
+      <div class="relative w-full max-w-3xl aspect-[16/10] mx-auto rounded-xl border-2 border-amber-500/40 overflow-hidden shadow-2xl bg-black" id="excavationBox">
+        
+        <!-- Underlying Artifact (Discovered underneath sand) -->
+        <div class="absolute inset-0 flex items-center justify-center bg-radial from-amber-950 via-[#101018] to-black p-6 select-none">
+          <div class="text-center">
+            <div class="w-48 h-48 sm:w-60 sm:h-60 mx-auto rounded-full overflow-hidden border-2 border-amber-400 shadow-2xl mb-4 relative">
+              <img src="https://images.pexels.com/photos/11003040/pexels-photo-11003040.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=600" 
+                   alt="Мраморная статуя Александра Великого" 
+                   class="w-full h-full object-cover object-top" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2 left-0 right-0 text-amber-300 font-ancient text-xs font-bold">Оригинальный мраморный бюст</div>
+            </div>
+            <div class="font-ancient text-amber-200 text-lg sm:text-xl font-bold">
+              Статуя Александра Македонского (Эллинистический Египет)
+            </div>
+            <p class="text-xs text-neutral-300 max-w-md mx-auto mt-2">
+              Найдена в мае 2019 г. в садах Шаллалат на глубине древней царской дороги. Скульптура выполнена из паросского мрамора с характерным наклоном головы анастоле.
+            </p>
+          </div>
+        </div>
+
+        <!-- Scratch Canvas (Earth / Sand layer) -->
+        <canvas id="excavateCanvas" class="absolute inset-0 w-full h-full cursor-crosshair z-10"></canvas>
+
+      </div>
+
+      <!-- Controls & Progress -->
+      <div class="flex flex-wrap items-center justify-between gap-4 max-w-3xl mx-auto mt-4 px-2">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-ancient text-neutral-400">Прогресс расчистки:</span>
+          <div class="w-32 sm:w-48 h-2.5 bg-neutral-800 rounded-full overflow-hidden border border-amber-900/50">
+            <div id="excavateProgress" class="h-full bg-gradient-to-r from-amber-500 to-amber-300 w-0 transition-all duration-200"></div>
+          </div>
+          <span id="excavatePercent" class="text-xs font-mono text-amber-400 font-bold">0%</span>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="resetExcavationBtn" class="px-4 py-1.5 rounded border border-amber-500/40 text-xs font-ancient text-amber-300 hover:bg-amber-950/50 transition-colors">
+            Засыпать раскоп
+          </button>
+          <span class="text-[11px] text-neutral-400">Водите курсором или пальцем по экрану</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 6: Profiler & Investigative Quiz ("Какая теория ближе вам?") -->
+  <section id="profiler" class="py-24 relative bg-[#09090c] border-t border-amber-900/30">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="font-ancient text-xs tracking-[0.3em] text-amber-400 uppercase mb-2">Интерактивный археологический профайлер</div>
+        <h2 class="text-3xl sm:text-4xl font-decor text-gold-gradient mb-4">Какой След Вы Считаете Истинным?</h2>
+        <p class="text-neutral-300 text-sm leading-relaxed font-light">
+          Ответьте на 4 ключевых вопроса о судьбе реликвии, и наш исторический алгоритм сопоставит ваши выводы с теориями ведущих ученых мира.
+        </p>
+      </div>
+
+      <!-- Quiz Card Box -->
+      <div class="bg-[#121218] border border-amber-500/30 rounded-xl p-6 sm:p-10 shadow-2xl gold-box-shadow" id="quizContainer">
+        
+        <!-- Step Indicator -->
+        <div class="flex items-center justify-between border-b border-amber-900/40 pb-4 mb-8 text-xs font-ancient text-neutral-400">
+          <span id="quizStepText">Вопрос 1 из 4</span>
+          <span class="text-amber-400 font-mono tracking-widest" id="quizCategory">СТРАТЕГИЯ ЗАХОРОНЕНИЯ</span>
+        </div>
+
+        <!-- Question Title -->
+        <h3 id="quizQuestion" class="text-lg sm:text-xl font-ancient text-amber-200 mb-6 font-semibold">
+          Вопрос загружается...
+        </h3>
+
+        <!-- Answers Grid -->
+        <div id="quizAnswers" class="grid grid-cols-1 gap-3 sm:gap-4 mb-8">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Result Box (Hidden by default) -->
+        <div id="quizResult" class="hidden text-center py-6">
+          <div class="w-16 h-16 rounded-full bg-amber-500/20 border border-amber-400 text-amber-300 flex items-center justify-center mx-auto mb-4 text-2xl" id="quizResultIcon">
+            🏛️
+          </div>
+          <span class="text-xs uppercase tracking-widest text-amber-400 font-ancient block mb-1">Ваш археологический вердикт:</span>
+          <h4 id="quizResultTitle" class="text-2xl sm:text-3xl font-decor text-gold-gradient mb-4">
+            Александрийская Гипотеза (Сома)
+          </h4>
+          <p id="quizResultDesc" class="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8 font-light">
+            Описание вердикта...
+          </p>
+          <button id="restartQuizBtn" class="px-6 py-2.5 rounded bg-amber-600 hover:bg-amber-500 text-black font-ancient font-bold text-xs uppercase tracking-wider transition-colors">
+            Пройти тест заново
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 7: Ancient Voices & Witnesses Gallery (Цитаты источников) -->
+  <section class="py-24 relative bg-[#0c0c11]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="font-ancient text-xs tracking-[0.3em] text-amber-400 uppercase mb-2">Голоса древности</div>
+        <h2 class="text-3xl sm:text-4xl font-decor text-gold-gradient mb-4">Что Писали Хроники</h2>
+        <div class="w-20 h-0.5 bg-amber-500/50 mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Quote 1 -->
+        <div class="bg-[#121217] border border-amber-900/30 rounded-xl p-6 relative flex flex-col justify-between hover:border-amber-500/40 transition-colors">
+          <div>
+            <div class="text-amber-500 text-3xl font-ancient mb-2">“</div>
+            <p class="text-neutral-300 text-sm italic leading-relaxed mb-4">
+              «В части города, именуемой Брухийон, находится Сома — огороженное священное место, где помещались усыпальницы царей и самого Александра... Тело Александра Птолемей перевез и похоронил в Александрии, где оно покоится и теперь; впрочем, не в прежнем гробе, ибо этот последний был стеклянным...»
+            </p>
+          </div>
+          <div class="pt-4 border-t border-amber-900/30 flex items-center justify-between text-xs font-ancient">
+            <span class="text-amber-300 font-bold">Страбон</span>
+            <span class="text-neutral-500">География, ок. 24 г. н.э.</span>
+          </div>
+        </div>
+
+        <!-- Quote 2 -->
+        <div class="bg-[#121217] border border-amber-900/30 rounded-xl p-6 relative flex flex-col justify-between hover:border-amber-500/40 transition-colors">
+          <div>
+            <div class="text-amber-500 text-3xl font-ancient mb-2">“</div>
+            <p class="text-neutral-300 text-sm italic leading-relaxed mb-4">
+              «Приказав вынуть тело Александра из гробницы, он благоговейно возложил на него золотой венец и осыпал цветами... Когда же его спросили, угодно ли ему взглянуть также на Птолемеев, он ответил, что желал видеть царя, а не мертвецов...»
+            </p>
+          </div>
+          <div class="pt-4 border-t border-amber-900/30 flex items-center justify-between text-xs font-ancient">
+            <span class="text-amber-300 font-bold">Светоний Транквилл</span>
+            <span class="text-neutral-500">Жизнь двенадцати цезарей (Август, XVIII)</span>
+          </div>
+        </div>
+
+        <!-- Quote 3 -->
+        <div class="bg-[#121217] border border-amber-900/30 rounded-xl p-6 relative flex flex-col justify-between hover:border-amber-500/40 transition-colors">
+          <div>
+            <div class="text-amber-500 text-3xl font-ancient mb-2">“</div>
+            <p class="text-neutral-300 text-sm italic leading-relaxed mb-4">
+              «Север исследовал все святилища и собрал из всех них все книги, содержавшие что-либо тайное, и запер их в гробнице Александра, дабы никто впредь не видел ни тела Александра, ни читал того, что было записано в этих книгах...»
+            </p>
+          </div>
+          <div class="pt-4 border-t border-amber-900/30 flex items-center justify-between text-xs font-ancient">
+            <span class="text-amber-300 font-bold">Дион Кассий</span>
+            <span class="text-neutral-500">Римская история, LXXVI.13</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#07070a] border-t border-amber-900/40 py-12 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-amber-950 text-center md:text-left">
+        <div>
+          <div class="font-decor text-lg text-gold-gradient">SEMA ALEXANDER • ТАЙНА ГРОБНИЦЫ</div>
+          <div class="text-xs text-neutral-400 mt-1">Интерактивный научный и просветительский путеводитель по античной тайне</div>
+        </div>
+        <div class="flex items-center gap-6 font-ancient text-xs text-neutral-400">
+          <a href="#hero" class="hover:text-amber-400 transition-colors">Наверх</a>
+          <a href="#hypotheses" class="hover:text-amber-400 transition-colors">Гипотезы</a>
+          <a href="#interactive-map" class="hover:text-amber-400 transition-colors">Карта</a>
+          <a href="#chronicle" class="hover:text-amber-400 transition-colors">Хроника</a>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-neutral-500 gap-4">
+        <div>
+          © 2026 Sema Alexander Investigation. Все археологические данные основаны на античных источниках (Диодор, Страбон, Плутарх, Светоний) и отчетах раскопок.
+        </div>
+        <div class="text-amber-400/80 font-ancient">
+          Invenietur lux in tenebris
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <script>
+    /**
+     * HISTORICAL DATA STORE
+     */
+    const HYPOTHESES_DATA = {
+      alexandria: {
+        id: "alexandria",
+        title: "Александрия: Квартал Сома и Мечеть Наби Даниэль",
+        icon: "🏛️",
+        rating: 65,
+        location: "Александрия, Египет (Перекресток древних проспектов)",
+        period: "Конец IV в. до н.э. — конец IV в. н.э.",
+        depth: "10–14 метров под современным городом",
+        leadArchaeologist: "Каллиопи Лимнеос-Папакоста (Hellenistic Institute of Alexandria)",
+        summary: "Абсолютное большинство античных авторов (Страбон, Зенобий, Ахилл Татий) подтверждают: Александр покоился в царском квартале Брухийон в усыпальнице Сома («Тело»). Позже над древними руинами выросла средневековая арабская Александрия.",
+        pros: [
+          "Десятки римских императоров лично посещали саркофаг именно в Александрии",
+          "В 2019 году в садах Шаллалат откопана редкая эллинистическая статуя Александра и царские фундаменты эпохи Птолемеев",
+          "Генрих Шлиман в 1888 году пытался получить разрешение на раскопки под мечетью Наби Даниэль, где священнослужители сообщали о тайных подземных криптах"
+        ],
+        cons: [
+          "Землетрясение и цунами 365 г. н.э. опустили прибрежную часть города на 4-6 метров в воду",
+          "Плотная современная городская застройка делает масштабные раскопки практически невозможными"
+        ],
+        image: "https://images.pexels.com/photos/20755097/pexels-photo-20755097.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        quote: "«Сома была частью царского дворца, включавшей гробницы царей и самого Александра...» — Страбон"
+      },
+      venice: {
+        id: "venice",
+        title: "Венеция: Базилика Святого Марка (Подмена Тела)",
+        icon: "🦁",
+        rating: 18,
+        location: "Венеция, Италия (Крипта под главным алтарем)",
+        period: "828 г. н.э. — наши дни",
+        depth: "В саркофаге под престолом базилики",
+        leadArchaeologist: "Эндрю Чагг (Andrew Michael Chugg, британский исследователь)",
+        summary: "Сенсационная теория: в 828 г. венецианские купцы Буоно из Маламокко и Рустико из Торчелло тайно вывезли мумию из Александрии под слоем свинины. Но кого они вывезли? В древности тело евангелиста Марка было сожжено по свидетельствам христианских хроник, а привезенная мумия была бальзамирована в льняных бинтах по царскому египетскому обряду!",
+        pros: [
+          "В базилике рядом с гробницей найден фрагмент македонского надгробия со щитом с 16-лучевой вергинской звездой и мечом",
+          "Христианские тексты IV века утверждают, что тело св. Марка сожгли язычники в 68 г. н.э., откуда же взялась целая мумия?",
+          "Культ Александра в Александрии внезапно прекратился именно тогда, когда возник культ мощей св. Марка в том же районе"
+        ],
+        cons: [
+          "Ватикан и Венецианская патриархия отказывают в проведении ДНК-экспертизы и углеродного анализа мощей в соборе",
+          "Отсутствуют прямые средневековые записи о намеренном обмене тел"
+        ],
+        image: "https://images.pexels.com/photos/13509104/pexels-photo-13509104.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        quote: "«Могли ли венецианцы по ошибке или сознательно забрать самого Александра, спасая его от уничтожения?» — Эндрю Чагг"
+      },
+      siwa: {
+        id: "siwa",
+        title: "Оазис Сива: Храм Оракула Амона (Воля Царя)",
+        icon: "☀️",
+        rating: 10,
+        location: "Ливийская пустыня, Египет (Билад аль-Рум)",
+        period: "331 до н.э. — возможная тайная перезахоронка",
+        depth: "Песчаные холмы вокруг оазиса",
+        leadArchaeologist: "Лиана Сувальци (Liana Souvaltzi, Греция)",
+        summary: "В 331 г. до н.э. Александр совершил смертельно опасный переход через пустыню к оракулу Амона в Сиве, где жрец провозгласил его сыном бога. Квинт Курций Руф и Юстин писали, что Александр завещал похоронить себя именно у храма своего божественного отца Амона.",
+        pros: [
+          "В 1995 г. экспедиция Лианы Сувальци объявила об открытии монументальной македонской гробницы с надписями, упоминающими Птолемея и Александра",
+          "Идеальный сухой пустынный климат, превосходно консервирующий мумии на тысячелетия",
+          "Птолемей мог тайно исполнить последнюю волю друга подальше от политических войн диадохов"
+        ],
+        cons: [
+          "Египетские и греческие власти отозвали лицензию у Сувальци из-за спорной интерпретации найденных греческих табличек",
+          "Транспортировка тяжелого кортежа через песчаные дюны Сивы была крайне трудной"
+        ],
+        image: "https://images.pexels.com/photos/16580393/pexels-photo-16580393.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        quote: "«Он просил похоронить его в святилище Аммона...» — Юстин (Краткая история Помпея Трога)"
+      },
+      amphipolis: {
+        id: "amphipolis",
+        title: "Амфиполис: Гробница Каста (Македония)",
+        icon: "👑",
+        rating: 5,
+        location: "Центральная Македония, Греция",
+        period: "Конец IV века до н.э.",
+        depth: "Курган диаметром 158 метров",
+        leadArchaeologist: "Катерина Перистери (Katerina Peristeri, Министерство культуры Греции)",
+        summary: "Колоссальный погребальный курган Каста, окруженный 500-метровой стеной из тасосского белого мрамора, со сфинксами, кариатидами и мозаикой «Похищение Персефоны». Построен архитектором Динократом — личным градостроителем Александра Великого.",
+        pros: [
+          "Крупнейший погребальный монумент когда-либо найденный в греческом мире",
+          "Точная датировка временем смерти Александра (325–300 гг. до н.э.)",
+          "Монограмма 'H' указывает на Гефестиона — ближайшего друга царя"
+        ],
+        cons: [
+          "Найденные кости принадлежат пожилой женщине (вероятно, матери Александра Олимпиаде) и нескольким мужчинам",
+          "Исторически тело перехватил Птолемей, и в Македонию оно так и не вернулось"
+        ],
+        image: "https://images.pexels.com/photos/31497115/pexels-photo-31497115.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        quote: "«Памятник достоин царя царей, но чьи кости остались в известняковой могиле?» — греческие археологи"
+      },
+      memphis: {
+        id: "memphis",
+        title: "Мемфис: Серапеум Саккары (Первая Обитель)",
+        icon: "🏺",
+        rating: 2,
+        location: "Древний Мемфис / Саккара, Египет",
+        period: "321 — ок. 280 гг. до н.э.",
+        depth: "Подземные катакомбы священных быков Аписов",
+        leadArchaeologist: "Огюст Мариетт / современные египтологи",
+        summary: "Достоверно известно: Птолемей I держал тело Александра в Мемфисе более 40 лет, прежде чем перевезти в Александрию. Существует теория, что тело спрятали в лабиринтах Серапеума в Саккаре, а в Александрию отправили кенотаф или дубликат.",
+        pros: [
+          "Павсаний прямо указывает: 'Птолемей похоронил его по македонскому обычаю в Мемфисе'",
+          "В Саккаре обнаружен полукруг греческих философов и поэтов, явно воздвигнутый первыми Птолемеями"
+        ],
+        cons: [
+          "Свидетельства Страбона и римских цезарей неоспоримо доказывают наличие открытого саркофага в Александрии позже"
+        ],
+        image: "https://images.pexels.com/photos/12437205/pexels-photo-12437205.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        quote: "«Птолемей снес тело Александра в Мемфис и предал его земле там...» — Павсаний"
+      }
+    };
+
+    const MAP_PINS_DATA = {
+      alexandria: {
+        title: "Александрия: Квартал Сема (Soma)",
+        status: "Текущие раскопки (Shallalat Gardens)",
+        coords: "31°11'53\" N, 29°54'50\" E",
+        depth: "10-14 м",
+        desc: "Главный кандидат. Здесь находился царский комплекс Брухийон. В 2019 г. обнаружен эллинистический уровень царских кварталов. Поиски продолжаются в районе садов Шаллалат и улицы Фуад.",
+        probability: "65%",
+        color: "amber"
+      },
+      venice: {
+        title: "Венеция: Базилика Святого Марка",
+        status: "Действующий собор (Мощи под алтарем)",
+        coords: "45°26'04\" N, 12°20'22\" E",
+        depth: "Надземная крипта",
+        desc: "Теория Эндрю Чагга: тело, почитаемое как св. Марк, на самом деле может быть забальзамированным царем Македонии. Рядом найден македонский известняковый щит времен Александра.",
+        probability: "18%",
+        color: "blue"
+      },
+      siwa: {
+        title: "Оазис Сива: Храм Оракула Амона",
+        status: "Раскопки заморожены",
+        coords: "29°12'11\" N, 25°31'08\" E",
+        depth: "Песчаный курган",
+        desc: "Место, где Александр был объявлен сыном Зевса-Амона. Завещание Александра требовало упокоения именно здесь. В 1995 г. греческая миссия нашла македонский триглиф.",
+        probability: "10%",
+        color: "amber"
+      },
+      amphipolis: {
+        title: "Амфиполис: Холм Каста (Греция)",
+        status: "Археологический парк",
+        coords: "40°49'29\" N, 23°51'48\" E",
+        depth: "158 м диаметр кургана",
+        desc: "Грандиозный мавзолей конца IV в. до н.э. со сфинксами и кариатидами. Вероятно, кенотаф царя или мавзолей Гефестиона и Роксаны с сыном Александром IV.",
+        probability: "5%",
+        color: "purple"
+      },
+      memphis: {
+        title: "Мемфис: Некрополь Саккары",
+        status: "Исследуется",
+        coords: "29°52'17\" N, 31°12'59\" E",
+        depth: "Подземные галереи Серапеума",
+        desc: "Первая стоянка погребального кортежа в Египте при Птолемее I Сотере. Останки пребывали здесь около 40 лет до переноса в Александрию.",
+        probability: "2%",
+        color: "yellow"
+      },
+      babylon: {
+        title: "Вавилон (Месопотамия)",
+        status: "Место кончины",
+        coords: "32°32'11\" N, 44°25'15\" E",
+        depth: "Дворец Навуходоносора II",
+        desc: "Здесь 10 или 11 июня 323 г. до н.э. умер Александр Великий. Тело было забальзамировано египетскими и халдейскими бальзамировщиками перед отправкой в путь.",
+        probability: "0% (Исходная точка)",
+        color: "red"
+      }
+    };
+
+    /**
+     * INITIALIZE HYPOTHESIS SHOWCASE
+     */
+    function renderHypothesis(theoryKey) {
+      const data = HYPOTHESES_DATA[theoryKey];
+      if (!data) return;
+
+      const card = document.getElementById("hypothesisCard");
+      card.innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          <div class="lg:col-span-5 relative min-h-[300px] lg:min-h-full">
+            <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover object-center brightness-90 filter contrast-105" />
+            <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#121218] via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-amber-500/40 rounded-full px-3 py-1 flex items-center gap-2">
+              <span class="text-sm">${data.icon}</span>
+              <span class="text-xs font-ancient text-amber-300 font-bold uppercase tracking-wider">Вероятность: ${data.rating}%</span>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-7 p-6 sm:p-10 space-y-6">
+            <div>
+              <div class="text-xs font-ancient text-amber-400/80 uppercase tracking-widest mb-1">Археологическое досье</div>
+              <h3 class="text-2xl sm:text-3xl font-decor text-gold-gradient">${data.title}</h3>
+              <div class="flex flex-wrap gap-4 text-xs text-neutral-400 mt-2 font-mono">
+                <span>📍 ${data.location}</span>
+                <span>⛏️ Глубина: ${data.depth}</span>
+              </div>
+            </div>
+
+            <p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+              ${data.summary}
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div class="p-3.5 rounded bg-[#181822] border border-emerald-900/40">
+                <div class="font-ancient text-emerald-400 font-bold mb-1 flex items-center gap-1.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  Аргументы «ЗА»:
+                </div>
+                <ul class="space-y-1.5 text-neutral-300 list-disc list-inside">
+                  ${data.pros.map(p => `<li>${p}</li>`).join('')}
+                </ul>
+              </div>
+
+              <div class="p-3.5 rounded bg-[#181822] border border-red-900/40">
+                <div class="font-ancient text-red-400 font-bold mb-1 flex items-center gap-1.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                  Контраргументы:
+                </div>
+                <ul class="space-y-1.5 text-neutral-300 list-disc list-inside">
+                  ${data.cons.map(c => `<li>${c}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-3 rounded border-l-2 border-amber-400 bg-amber-950/20 text-xs italic text-amber-200/90 font-ancient">
+              ${data.quote}
+            </div>
+
+            <div class="pt-2 flex items-center justify-between text-xs text-neutral-400 border-t border-amber-900/30">
+              <span>Ведущий исследователь: <strong class="text-neutral-200">${data.leadArchaeologist}</strong></span>
+              <a href="#interactive-map" class="text-amber-400 hover:underline flex items-center gap-1">
+                Показать на карте &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Tabs Listener
+    document.querySelectorAll(".theory-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".theory-btn").forEach(b => {
+          b.classList.remove("active", "border-amber-500", "bg-amber-500/20", "text-amber-200");
+          b.classList.add("border-amber-500/30", "bg-[#16161d]", "text-neutral-300");
+        });
+        btn.classList.add("active", "border-amber-500", "bg-amber-500/20", "text-amber-200");
+        btn.classList.remove("border-amber-500/30", "bg-[#16161d]", "text-neutral-300");
+        
+        renderHypothesis(btn.dataset.theory);
+      });
+    });
+
+    /**
+     * INTERACTIVE MAP DOSSIER RENDERER
+     */
+    function renderMapDossier(pinKey) {
+      const data = MAP_PINS_DATA[pinKey];
+      if (!data) return;
+
+      const dossier = document.getElementById("mapDossier");
+      dossier.innerHTML = `
+        <div class="flex items-center justify-between border-b border-amber-900/40 pb-3 mb-4">
+          <span class="text-[11px] font-ancient text-amber-400 uppercase tracking-widest">Досье локации</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+            ${data.probability}
+          </span>
+        </div>
+
+        <h3 class="text-xl font-decor text-amber-200 mb-2">${data.title}</h3>
+        
+        <div class="space-y-2 text-xs font-mono text-neutral-400 mb-4 bg-black/40 p-3 rounded border border-amber-950">
+          <div class="flex justify-between"><span>Координаты:</span> <span class="text-amber-300">${data.coords}</span></div>
+          <div class="flex justify-between"><span>Глубина слоя:</span> <span class="text-amber-300">${data.depth}</span></div>
+          <div class="flex justify-between"><span>Статус:</span> <span class="text-emerald-400">${data.status}</span></div>
+        </div>
+
+        <p class="text-neutral-300 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+          ${data.desc}
+        </p>
+
+        <div class="p-3 bg-amber-950/20 rounded border border-amber-900/40 text-xs text-amber-200">
+          <span class="font-bold font-ancient block mb-1">Историческая справка:</span>
+          ${pinKey === 'alexandria' ? 'Здесь находился перекресток проспекта Канопуса и Сомы. Саркофаг видели Цезарь, Август, Каракалла.' : ''}
+          ${pinKey === 'venice' ? 'В 828 году венецианские торговцы привезли мощи под видом тела святого Марка.' : ''}
+          ${pinKey === 'siwa' ? 'Александр посетил оазис весной 331 г. до н.э. и спросил оракула, отомстил ли он за всех убийц отца.' : ''}
+          ${pinKey === 'amphipolis' ? 'Диаметр кургана 158 метров — точный астрономический масштаб по канонам Динократа.' : ''}
+          ${pinKey === 'memphis' ? 'Мемфис был древней религиозной столицей фараонов Египта.' : ''}
+          ${pinKey === 'babylon' ? 'Дворец Навуходоносора II, тронный зал, где армия в слезах проходила мимо умирающего царя.' : ''}
+        </div>
+      `;
+    }
+
+    // Map pins click
+    document.querySelectorAll(".map-pin").forEach(pin => {
+      pin.addEventListener("click", () => {
+        const pinKey = pin.dataset.pin;
+        renderMapDossier(pinKey);
+      });
+    });
+
+    /**
+     * CATAFALQUE LAYERS INTERACTIVE SELECTOR
+     */
+    document.querySelectorAll(".layer-item").forEach(item => {
+      item.addEventListener("click", () => {
+        document.querySelectorAll(".layer-item").forEach(i => {
+          i.classList.remove("border-amber-500", "bg-amber-950/40");
+          i.querySelector(".layer-desc")?.classList.add("hidden");
+        });
+        item.classList.add("border-amber-500", "bg-amber-950/40");
+        item.querySelector(".layer-desc")?.classList.remove("hidden");
+      });
+    });
+
+    /**
+     * VIRTUAL EXCAVATION CANVAS (Scratch & Brush mechanic)
+     */
+    const excavateCanvas = document.getElementById("excavateCanvas");
+    const ctx = excavateCanvas.getContext("2d");
+    let isDrawing = false;
+    let totalPixels = 0;
+    let clearedPixels = 0;
+
+    function resizeExcavateCanvas() {
+      const rect = excavateCanvas.getBoundingClientRect();
+      excavateCanvas.width = rect.width;
+      excavateCanvas.height = rect.height;
+      fillSandLayer();
+    }
+
+    function fillSandLayer() {
+      // Create sandy texture
+      ctx.globalCompositeOperation = "source-over";
+      const grad = ctx.createLinearGradient(0, 0, excavateCanvas.width, excavateCanvas.height);
+      grad.addColorStop(0, "#4a3c28");
+      grad.addColorStop(0.5, "#2a2114");
+      grad.addColorStop(1, "#3c301e");
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, excavateCanvas.width, excavateCanvas.height);
+
+      // Noise grains
+      for (let i = 0; i < 4000; i++) {
+        const x = Math.random() * excavateCanvas.width;
+        const y = Math.random() * excavateCanvas.height;
+        ctx.fillStyle = Math.random() > 0.5 ? "#d4af37" : "#120e09";
+        ctx.fillRect(x, y, 2, 2);
+      }
+
+      // Archaeological grid text
+      ctx.fillStyle = "rgba(230, 202, 101, 0.4)";
+      ctx.font = "12px Cinzel";
+      ctx.fillText("АРХЕОЛОГИЧЕСКИЙ СЛОЙ IV В. ДО Н.Э. • ШАЛЛАЛАТ, СЕКТОР B", 20, 30);
+      ctx.fillText("РАСЧИСТИТЕ КИСТЬЮ ЗЕМЛЮ", 20, excavateCanvas.height - 20);
+
+      totalPixels = excavateCanvas.width * excavateCanvas.height;
+      clearedPixels = 0;
+      updateExcavateProgress(0);
+    }
+
+    function scratch(x, y) {
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.beginPath();
+      ctx.arc(x, y, 32, 0, Math.PI * 2);
+      ctx.fill();
+
+      clearedPixels += Math.PI * 32 * 20;
+      let pct = Math.min(100, Math.round((clearedPixels / totalPixels) * 100));
+      updateExcavateProgress(pct);
+    }
+
+    function updateExcavateProgress(pct) {
+      document.getElementById("excavateProgress").style.width = pct + "%";
+      document.getElementById("excavatePercent").textContent = pct + "%";
+    }
+
+    // Mouse / Touch events for Excavation
+    excavateCanvas.addEventListener("mousedown", (e) => {
+      isDrawing = true;
+      const rect = excavateCanvas.getBoundingClientRect();
+      scratch(e.clientX - rect.left, e.clientY - rect.top);
+    });
+
+    window.addEventListener("mouseup", () => isDrawing = false);
+
+    excavateCanvas.addEventListener("mousemove", (e) => {
+      if (!isDrawing) return;
+      const rect = excavateCanvas.getBoundingClientRect();
+      scratch(e.clientX - rect.left, e.clientY - rect.top);
+    });
+
+    // Touch
+    excavateCanvas.addEventListener("touchstart", (e) => {
+      isDrawing = true;
+      const rect = excavateCanvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      scratch(touch.clientX - rect.left, touch.clientY - rect.top);
+    }, { passive: true });
+
+    excavateCanvas.addEventListener("touchmove", (e) => {
+      if (!isDrawing) return;
+      const rect = excavateCanvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      scratch(touch.clientX - rect.left, touch.clientY - rect.top);
+    }, { passive: true });
+
+    document.getElementById("resetExcavationBtn").addEventListener("click", () => {
+      fillSandLayer();
+    });
+
+    /**
+     * PROFILER / QUIZ ENGINE
+     */
+    const QUIZ_QUESTIONS = [
+      {
+        question: "1. Какому типу исторических свидетельств вы доверяете больше всего?",
+        category: "МЕТОДОЛОГИЯ ИСТОЧНИКОВЕДЕНИЯ",
+        answers: [
+          { text: "Античным римским хроникам и свидетельствам императоров-очевидцев (Страбон, Дион Кассий, Светоний)", scores: { alexandria: 3, venice: 1 } },
+          { text: "Последней документированной предсмертной воле самого полководца", scores: { siwa: 3 } },
+          { text: "Таинственным средневековым переплетениям языческих культов и христианских реликвий", scores: { venice: 3 } },
+          { text: "Грандиозным каменным мавзолеям с мозаиками и скульптурами эллинистической эпохи", scores: { amphipolis: 3, memphis: 1 } }
+        ]
+      },
+      {
+        question: "2. Что произошло с саркофагом в конце IV века во время погромов патриарха Феофила (391 г. н.э.)?",
+        category: "КАТАКЛИЗМЫ И КРИЗИСЫ",
+        answers: [
+          { text: "Он остался погребен под оползнями и руинами древней Александрии, где лежит и поныне", scores: { alexandria: 3 } },
+          { text: "Христиане переименовали гробницу в почитаемые мощи святого апостола, чтобы сохранить", scores: { venice: 3 } },
+          { text: "Верные жрецы Амона тайно вывезли тело царя обратно в глубь Ливийской пустыни", scores: { siwa: 3 } },
+          { text: "Тело царя на самом деле никогда не покидало первоначального царского святилища", scores: { amphipolis: 2, memphis: 2 } }
+        ]
+      },
+      {
+        question: "3. Как вы оцениваете теорию британского историка Эндрю Чагга о соборе Святого Марка в Венеции?",
+        category: "ВЕНЕЦИАНСКИЙ СЛЕД",
+        answers: [
+          { text: "Крайне правдоподобно: совпадение македонского щита и бальзамированного тела в Египте потрясает!", scores: { venice: 3 } },
+          { text: "Любопытно, но слишком фантастично: тело почти наверняка лежит в Александрии", scores: { alexandria: 3 } },
+          { text: "Маловероятно: Александр мечтал о вечном покое в песках своего бога-отца Амона", scores: { siwa: 2 } },
+          { text: "Истинные монархи Македонии всегда возвращались на родную македонскую землю", scores: { amphipolis: 3 } }
+        ]
+      },
+      {
+        question: "4. Где бы вы лично начали масштабные раскопки с неограниченным бюджетом?",
+        category: "АРХЕОЛОГИЧЕСКАЯ СТРАТЕГИЯ",
+        answers: [
+          { text: "Под мечетью Наби Даниэль и в садах Шаллалат в центре Александрии", scores: { alexandria: 3 } },
+          { text: "Провел бы современную ДНК и радиоуглеродную экспертизу мощей в крипте собора Святого Марка в Венеции", scores: { venice: 3 } },
+          { text: "Глубинное георадарное сканирование окрестностей Билад аль-Рум в оазисе Сива", scores: { siwa: 3 } },
+          { text: "Полномасштабные раскопки некрополя Амфиполиса и подземных галерей Саккары", scores: { amphipolis: 2, memphis: 2 } }
+        ]
+      }
+    ];
+
+    let currentQuizIndex = 0;
+    let userScores = { alexandria: 0, venice: 0, siwa: 0, amphipolis: 0, memphis: 0 };
+
+    function renderQuizStep() {
+      if (currentQuizIndex >= QUIZ_QUESTIONS.length) {
+        showQuizVerdict();
+        return;
+      }
+
+      const q = QUIZ_QUESTIONS[currentQuizIndex];
+      document.getElementById("quizStepText").textContent = `Вопрос ${currentQuizIndex + 1} из ${QUIZ_QUESTIONS.length}`;
+      document.getElementById("quizCategory").textContent = q.category;
+      document.getElementById("quizQuestion").textContent = q.question;
+
+      const ansContainer = document.getElementById("quizAnswers");
+      ansContainer.innerHTML = "";
+
+      q.answers.forEach((ans, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "w-full text-left p-4 rounded-lg bg-[#181822] hover:bg-amber-950/40 border border-amber-900/30 hover:border-amber-400 transition-all text-xs sm:text-sm text-neutral-200 flex items-center gap-3 group";
+        btn.innerHTML = `
+          <span class="w-6 h-6 rounded-full border border-amber-500/40 flex items-center justify-center text-xs text-amber-400 group-hover:border-amber-300 font-ancient font-bold shrink-0">
+            ${['А', 'Б', 'В', 'Г'][idx]}
+          </span>
+          <span class="leading-relaxed">${ans.text}</span>
+        `;
+        btn.onclick = () => {
+          for (const [k, v] of Object.entries(ans.scores)) {
+            userScores[k] += v;
+          }
+          currentQuizIndex++;
+          renderQuizStep();
+        };
+        ansContainer.appendChild(btn);
+      });
+    }
+
+    function showQuizVerdict() {
+      document.getElementById("quizQuestion").classList.add("hidden");
+      document.getElementById("quizAnswers").classList.add("hidden");
+      document.getElementById("quizStepText").textContent = "Расследование завершено";
+      document.getElementById("quizCategory").textContent = "ИТОГОВЫЙ ВЕРДИКТ";
+
+      let topKey = "alexandria";
+      let maxScore = -1;
+      for (const [k, v] of Object.entries(userScores)) {
+        if (v > maxScore) {
+          maxScore = v;
+          topKey = k;
+        }
+      }
+
+      const verdictData = HYPOTHESES_DATA[topKey];
+      const resBox = document.getElementById("quizResult");
+      resBox.classList.remove("hidden");
+
+      document.getElementById("quizResultIcon").textContent = verdictData.icon;
+      document.getElementById("quizResultTitle").textContent = verdictData.title;
+      document.getElementById("quizResultDesc").textContent = 
+        `Ваш исследовательский профиль наиболее точно совпадает с теорией: «${verdictData.title}». ` +
+        `Вы опираетесь на данные о том, что ${verdictData.summary.substring(0, 180)}...`;
+    }
+
+    document.getElementById("restartQuizBtn").addEventListener("click", () => {
+      currentQuizIndex = 0;
+      userScores = { alexandria: 0, venice: 0, siwa: 0, amphipolis: 0, memphis: 0 };
+      document.getElementById("quizResult").classList.add("hidden");
+      document.getElementById("quizQuestion").classList.remove("hidden");
+      document.getElementById("quizAnswers").classList.remove("hidden");
+      renderQuizStep();
+    });
+
+    /**
+     * DUST & SAND PARTICLES ON HERO CANVAS
+     */
+    const sandCanvas = document.getElementById("sandParticleCanvas");
+    const sandCtx = sandCanvas.getContext("2d");
+    let particles = [];
+
+    function resizeSandCanvas() {
+      sandCanvas.width = sandCanvas.offsetWidth;
+      sandCanvas.height = sandCanvas.offsetHeight;
+      initParticles();
+    }
+
+    function initParticles() {
+      particles = [];
+      const count = Math.floor(sandCanvas.width / 24);
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * sandCanvas.width,
+          y: Math.random() * sandCanvas.height,
+          radius: Math.random() * 1.8 + 0.4,
+          speedX: Math.random() * 0.8 + 0.2,
+          speedY: Math.random() * 0.4 - 0.2,
+          opacity: Math.random() * 0.6 + 0.1
+        });
+      }
+    }
+
+    function animateParticles() {
+      sandCtx.clearRect(0, 0, sandCanvas.width, sandCanvas.height);
+      sandCtx.fillStyle = "#e6ca65";
+
+      particles.forEach(p => {
+        sandCtx.globalAlpha = p.opacity;
+        sandCtx.beginPath();
+        sandCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        sandCtx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x > sandCanvas.width) p.x = 0;
+        if (p.y > sandCanvas.height) p.y = 0;
+        if (p.y < 0) p.y = sandCanvas.height;
+      });
+
+      requestAnimationFrame(animateParticles);
+    }
+
+    /**
+     * SYNTHESIZED WEB AUDIO API AMBIENT SOUNDSCAPE (Royalty-free ancient wind & temple chime)
+     */
+    let audioCtx = null;
+    let isAudioPlaying = false;
+    let windGain = null;
+    let chimeInterval = null;
+
+    function initAudio() {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContext();
+
+      // Create pink/brown noise for desert wind
+      const bufferSize = audioCtx.sampleRate * 2;
+      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      let b0 = 0, b1 = 0, b2 = 0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        b0 = 0.99 * b0 + white * 0.05;
+        b1 = 0.95 * b1 + white * 0.1;
+        b2 = 0.85 * b2 + white * 0.2;
+        output[i] = (b0 + b1 + b2) * 0.3;
+      }
+
+      const whiteNoise = audioCtx.createBufferSource();
+      whiteNoise.buffer = noiseBuffer;
+      whiteNoise.loop = true;
+
+      // Bandpass filter for wind howl
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = "bandpass";
+      filter.frequency.value = 280;
+      filter.Q.value = 3.0;
+
+      windGain = audioCtx.createGain();
+      windGain.gain.value = 0.08;
+
+      whiteNoise.connect(filter);
+      filter.connect(windGain);
+      windGain.connect(audioCtx.destination);
+      whiteNoise.start();
+
+      // Periodic subtle temple bell resonance
+      chimeInterval = setInterval(() => {
+        if (!isAudioPlaying || !audioCtx) return;
+        playTempleChime();
+      }, 7000);
+    }
+
+    function playTempleChime() {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      
+      const freqs = [432, 540, 648, 864];
+      const f = freqs[Math.floor(Math.random() * freqs.length)];
+      
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(f, audioCtx.currentTime);
+      
+      gain.gain.setValueAtTime(0, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.04, audioCtx.currentTime + 0.1);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 4.5);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 4.6);
+    }
+
+    const audioToggleBtn = document.getElementById("audioToggleBtn");
+    audioToggleBtn.addEventListener("click", () => {
+      if (!audioCtx) {
+        initAudio();
+        isAudioPlaying = true;
+      } else {
+        if (audioCtx.state === "suspended") {
+          audioCtx.resume();
+          isAudioPlaying = true;
+        } else if (isAudioPlaying) {
+          windGain.gain.setValueAtTime(0, audioCtx.currentTime);
+          isAudioPlaying = false;
+        } else {
+          windGain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+          isAudioPlaying = true;
+        }
+      }
+
+      const bars = document.getElementById("audioBars");
+      const label = document.getElementById("audioLabel");
+      if (isAudioPlaying) {
+        label.textContent = "Звук Вкл";
+        audioToggleBtn.classList.add("border-amber-400", "bg-amber-900/60");
+        animateEqBars();
+      } else {
+        label.textContent = "Эхо Веков";
+        audioToggleBtn.classList.remove("border-amber-400", "bg-amber-900/60");
+      }
+    });
+
+    function animateEqBars() {
+      if (!isAudioPlaying) return;
+      const bars = document.querySelectorAll(".eq-bar");
+      bars.forEach(b => {
+        b.style.height = (Math.random() * 10 + 3) + "px";
+      });
+      setTimeout(animateEqBars, 200);
+    }
+
+    // Mobile Drawer Toggle
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+    mobileMenu.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    // Window Load Initialization
+    window.addEventListener("DOMContentLoaded", () => {
+      renderHypothesis("alexandria");
+      renderMapDossier("alexandria");
+      renderQuizStep();
+      
+      resizeSandCanvas();
+      animateParticles();
+
+      // Defer canvas resize until layout stabilizes
+      setTimeout(resizeExcavateCanvas, 300);
+    });
+
+    window.addEventListener("resize", () => {
+      resizeSandCanvas();
+      resizeExcavateCanvas();
+    });
+  </script>
+
+</body>
+</html>
